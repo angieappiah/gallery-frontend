@@ -1,14 +1,15 @@
-import './App.css';
+import React from 'react';
 
-class App extends React.Componenet {
+class App extends React.Component {
   render(){
-    <div className="App">
-     App
-    </div>
-  }
-  return (
+    return(
+      <div className="App">
+      App
+     </div>
+    )
 
-  );
+  }
+
 }
 
 export default App;
