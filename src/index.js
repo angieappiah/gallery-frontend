@@ -1,19 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import {createStore, applyMiddleware,compose} from 'redux'; //set up store
-import thunk from 'redux-thunk';   //asynchronous
-import {provider} from 'react-redux' //any component wrapped in provider will access to the store
+import ReactDOM from 'react-dom'
+import {createStore, applyMiddleware, compose} from 'redux' //set up store
+import thunk from 'redux-thunk'   //asynchronous
+import { Provider } from 'react-redux' //any component wrapped in provider will access to the store
+import  galleryReducer  from './reducers/galleryReducer'
 import App from './App';
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-let store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)))
+const store = createStore(galleryReducer, composeEnhancer(applyMiddleware(thunk)))
 
 ReactDOM.render(
-  <provider store={store}>
+  <Provider store={store}>
     <App/>
 
-  </provider>
+  </Provider>
 ,
   document.getElementById('root'));
 
