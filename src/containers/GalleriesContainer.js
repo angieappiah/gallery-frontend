@@ -1,14 +1,30 @@
 import React from "react";
+import { connect } from "react-redux";
+import {fetchGalleries} from '../actions/fetchGalleries'
+import Galleries from '../components/Galleries';
+import GalleryInput from '../components/GalleryInput';
 
 class GalleriesContainer extends React.Component{
+    componentDidMount(){
+        this.props.fetchGalleries()
+
+    }
 
     render(){
         return(
             <div>
-                GalleriesContainer
+                <Galleries/>
+                <GalleryInput/>
             </div>
         )
     }
 }
 
-export default GalleriesContainer
+const mapStateToProps = state => {
+    return {
+        galleries: state.galleries
+    }
+
+}
+
+export default connect(mapStateToProps, {fetchGalleries}) (GalleriesContainer)
