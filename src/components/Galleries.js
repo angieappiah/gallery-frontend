@@ -3,7 +3,7 @@ import React from 'react';
 const Galleries = (props) => {
     return(
         <div>
-           Galleries 
+           {props.galleries.map(gallery=> <li key={gallery.id}> {gallery.style}</li>)} 
         </div>
     )
 }
