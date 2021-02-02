@@ -13,7 +13,7 @@ class GalleriesContainer extends React.Component{
     render(){
         return(
             <div>
-                <Galleries galleries={this.props.galleries}/>
+                <Galleries galleries={this.props.galleries}/><br></br>
                 <GalleryInput/>
             </div>
         )
