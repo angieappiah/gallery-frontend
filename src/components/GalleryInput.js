@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect  } from "react-redux";
+import {addGallery} from "../actions/addGallery";
 
 class GalleryInput extends React.Component{
 
@@ -10,7 +12,9 @@ class GalleryInput extends React.Component{
       })
     }
 
-    handleSubmit = () =>{
+    handleSubmit = (event) =>{
+      event.preventDefault()
+      this.props.addGallery(this.state)
 
     }
 
@@ -28,4 +32,4 @@ class GalleryInput extends React.Component{
     }
 }
 
-export default GalleryInput
+export default connect (null, {addGallery}) (GalleryInput)
