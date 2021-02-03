@@ -4,7 +4,7 @@ import {addGallery} from "../actions/addGallery";
 
 class GalleryInput extends React.Component{
 
-    state = {style:'' }
+    state = {style:''}
 
     handleChange = (event) => {
       this.setState({
