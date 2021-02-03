@@ -15,6 +15,9 @@ class GalleryInput extends React.Component{
     handleSubmit = (event) =>{
       event.preventDefault()
       this.props.addGallery(this.state)
+      this.setState({
+        style:''
+      })
 
     }
 

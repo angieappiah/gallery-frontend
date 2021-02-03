@@ -12,8 +12,11 @@ const store = createStore(galleryReducer, composeEnhancer(applyMiddleware(thunk)
 
 ReactDOM.render(
   <Provider store={store}>
+    <Router>
+   
     <App/>
 
+    </Router>
   </Provider>,
   document.getElementById('root'));
 
