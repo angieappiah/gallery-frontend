@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import {Route} from 'react-router-dom'
+import Gallery from '../components/Gallery'
 import {fetchGalleries} from '../actions/fetchGalleries'
 import Galleries from '../components/Galleries';
 import GalleryInput from '../components/GalleryInput';
@@ -14,9 +15,9 @@ class GalleriesContainer extends React.Component{
     render(){
         return(
             <div>
-                <Route path ='/galleries/new' component={GalleryInput}/>
-                <Galleries galleries={this.props.galleries}/><br/>
-                <Route path = '/galleries'  render={() => <Galleries galleries={this.props.galleries}/>}/>
+                <Route path ='/galleries/new'     component={GalleryInput}/>
+                <Route path = '/galleries/:id'    render={(routerProps) => <Gallery{...routerProps} galleries={this.props.galleries}/>}/>
+                <Route exact path = '/galleries'  render={(routerProps) => <Galleries{...routerProps} galleries={this.props.galleries}/>}/>
                
             </div>
         )

@@ -2,9 +2,12 @@ import React from 'react'
 
 const Gallery = (props) =>{
 
+    let gallery = props.galleries[props.match.params.id-1]
+    console.log(gallery)
+
     return(
         <li>
-            {props.gallery.style}
+            {gallery ? gallery.style : null}
             
         </li>
     )
