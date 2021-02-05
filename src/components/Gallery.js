@@ -4,7 +4,7 @@ import PiecesContainer from '../containers/PiecesContainer'
 
 const Gallery = (props) =>{
 
-    let gallery = props.galleries[props.match.params.id-1]
+    let gallery = props.galleries.filter(gallery => gallery.id == props.match.params.id)[0]
     console.log(gallery)
 
     return(

@@ -5,7 +5,9 @@ const Pieces = (props) => {
 
     return(
         <div>
-            Pieces
+            {props.pieces && props.pieces.map(piece =>
+                <li key={piece.id}>{piece.name}-{piece.description}</li>
+                )}
 
         </div>
     )
