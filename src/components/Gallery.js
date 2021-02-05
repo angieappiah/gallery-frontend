@@ -1,5 +1,6 @@
 import React from 'react'
 import {Redirect} from 'react-router-dom'
+import PiecesContainer from '../containers/PiecesContainer'
 
 const Gallery = (props) =>{
 
@@ -7,10 +8,12 @@ const Gallery = (props) =>{
     console.log(gallery)
 
     return(
-        <li>
-            {gallery ? gallery.style : null}
-            
-        </li>
+        <div>
+        <h2>
+            {gallery ? gallery.style : null}  
+        </h2>
+        <PiecesContainer gallery={gallery}/>
+        </div>
     )
 
 }
