@@ -7,7 +7,7 @@ class PiecesContainer extends React.Component {
     render(){
         return(
             <div>
-                <PieceInput/>
+                <PieceInput gallery={this.props.gallery}/>
                 <Pieces pieces={this.props.gallery && this.props.gallery.pieces}/>
             </div>
 
