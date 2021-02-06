@@ -6,7 +6,8 @@ const Pieces = (props) => {
     return(
         <div>
             {props.pieces && props.pieces.map(piece =>
-                <li key={piece.id}>{piece.name}-{piece.description}</li>
+                <li key={piece.id}>{piece.name} - {piece.description}</li>
+                
                 )}
 
         </div>

@@ -1,4 +1,4 @@
-import React from 'react'
+//import React from 'react'
 
 export const addPiece = (piece,galleryId) =>{
 
@@ -10,5 +10,7 @@ export const addPiece = (piece,galleryId) =>{
             },
             body: JSON.stringify(piece)
         })
+        .then(response => response.json())
+        .then(gallery => dispatch({type:'ADD_PIECE', payload:gallery}))
     }
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from "react-redux";
+import {addPiece} from "../actions/addPiece";
 
 
 class PieceInput extends React.Component {
@@ -18,7 +19,11 @@ class PieceInput extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        addPiece(this.state, this.props.id)
+        this.props.addPiece(this.state, this.props.gallery.id)
+        this.setState({
+            name:'',
+            description:''
+        })
     }
 
     render(){
@@ -38,4 +43,4 @@ class PieceInput extends React.Component {
     }
     
 }
-export default connect(null) (PieceInput)
+export default connect(null,{addPiece})(PieceInput)
