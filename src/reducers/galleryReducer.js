@@ -25,7 +25,7 @@ export default function galleryReducer(state = {galleries: []}, action) {
                       return piece
                     }
                   })
-                  return {...state, pieces: pieces}
+                  return {...state, pieces: piecesTwo}
         default:
             return state
 

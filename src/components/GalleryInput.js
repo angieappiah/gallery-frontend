@@ -1,10 +1,12 @@
 import React from 'react';
-import { connect  } from "react-redux";
-import {addGallery} from "../actions/addGallery";
+import { connect  } from 'react-redux';
+import {addGallery} from '../actions/addGallery';
 
 class GalleryInput extends React.Component{
 
-    state = {style:''}
+    state = {
+      style:''
+    }
 
     handleChange = (event) => {
       this.setState({
