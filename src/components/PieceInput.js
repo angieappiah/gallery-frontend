@@ -6,7 +6,8 @@ import {addPiece} from "../actions/addPiece";
 class PieceInput extends React.Component {
     state = {
         name:'',
-        description:''
+        description:'',
+        featured_image: null
 
     }
 
@@ -17,12 +18,19 @@ class PieceInput extends React.Component {
 
     }
 
+    handleUpload = event => {
+        this.setState({
+            featured_image: event.target.files[0]
+        })
+      }
+
     handleSubmit = (event) => {
         event.preventDefault()
         this.props.addPiece(this.state, this.props.gallery.id)
         this.setState({
             name:'',
-            description:''
+            description:'',
+            featured_image: null
         })
     }
 
@@ -34,6 +42,8 @@ class PieceInput extends React.Component {
                     <input type='text' name='name' value={this.state.name} onChange={this.handleChange} placeholder='name'/>
                     <label>Description: </label>
                     <input type='text' name='description' value={this.state.description} onChange={this.handleChange} placeholder='description'/>
+                    <label>Add Image: </label>
+                    <input type='file' accept='image/*'  name='featured_image' multiple={false} onChange={this.onImageChange}/>
                     <input type= 'submit'/>
                    
                 </form>
