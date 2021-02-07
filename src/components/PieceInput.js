@@ -43,7 +43,7 @@ class PieceInput extends React.Component {
                     <label>Description: </label>
                     <input type='text' name='description' value={this.state.description} onChange={this.handleChange} placeholder='description'/>
                     <label>Add Image: </label>
-                    <input type='file' accept='image/*'  name='featured_image' multiple={false} onChange={this.onImageChange}/>
+                    <input type='file' accept='image/*'  name='featured_image' multiple={false} onChange={this.handleUpload}/>
                     <input type= 'submit'/>
                    
                 </form>

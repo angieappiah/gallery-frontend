@@ -3,10 +3,14 @@ import React from 'react'
 
 const Pieces = (props) => {
 
+    const handleDelete = ()=>{
+        
+    }
+
     return(
         <div>
             {props.pieces && props.pieces.map(piece =>
-                <li key={piece.id}>{piece.name} - {piece.description}</li>
+                <li key={piece.id}>{piece.name} - {piece.description} <button onClick={this.handleDelete}>Delete</button></li>
                 
                 )}
 
