@@ -1,20 +1,25 @@
 import React from 'react'
-//import PiecesContainer from '../containers/PiecesContainer'
+import {connect} from 'react-redux'
+import { deletePiece} from '../actions/deletePiece'
 
 const Pieces = (props) => {
+    console.log(props.pieces)
 
-    const handleDelete = ()=>{
-        
+    handleDelete = (piece) =>{
+        props.deletePiece
     }
+
+ 
 
     return(
         <div>
             {props.pieces && props.pieces.map(piece =>
-                <li key={piece.id}>{piece.name} - {piece.description} <button onClick={this.handleDelete}>Delete</button></li>
+                <li key={piece.id}>{piece.name} - {piece.description} <button onClick={() => this.handleDelete(piece)}>Delete</button></li>
                 
                 )}
-
         </div>
     )
+     
+
 }
- export default Pieces
+ export default connect(null,{deletePiece})(Pieces)
