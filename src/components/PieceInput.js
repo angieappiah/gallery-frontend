@@ -7,6 +7,7 @@ class PieceInput extends React.Component {
     state = {
         name:'',
         description:'',
+        url:'',
         featured_image: null
 
     }
@@ -18,11 +19,14 @@ class PieceInput extends React.Component {
 
     }
 
-    handleUpload = event => {
-        this.setState({
-            featured_image: event.target.files[0]
-        })
-      }
+    onImageChange = (event) => {
+        if (event.target.files && event.target.files[0]) {
+          this.setState({
+            featured_image: URL.createObjectURL(event.target.files[0])
+          });
+        }
+       }
+    
 
     handleSubmit = (event) => {
         event.preventDefault()
@@ -44,10 +48,12 @@ class PieceInput extends React.Component {
                     <label>Description: </label>
                     <input type='text' name='description' value={this.state.description} onChange={this.handleChange} placeholder='description'/><br/>
                     <label>Add Image: </label>
-                    <input type='file' accept='image/*'  name='featured_image' multiple={false} onChange={this.handleUpload}/>
+                    <input type='file' accept='image/*'  name='featured_image' multiple={false} onChange={this.onImageChange}/>
+                    <img id="target" src={this.state.featured_image}/>
                     <button type="submit">Submit</button>
                     <br></br><br></br><br></br>
                  
+                   
                 </form>
 
             </div>
