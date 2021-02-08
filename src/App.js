@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
+import './App.css';
 import Home from './components/Home';
 import About from './components/About';
 import NavBar from './components/NavBar';
