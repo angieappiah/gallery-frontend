@@ -1,14 +1,25 @@
 import React from 'react';
 import { connect } from "react-redux";
+import Home from './components/Home';
+import About from './components/About';
+import NavBar from './components/NavBar';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import GalleriesContainer from './containers/GalleriesContainer'
 
 class App extends React.Component {
 
   render(){
     return(
-      <div className="App">
+      <Router>
+           <div className="App">
+           <NavBar />
+           <Route exact path="/about" component={About} />
+           <Route exact path="/" component={Home} />
         <GalleriesContainer/>
      </div>
+
+      </Router>
+
     )
 
   }
