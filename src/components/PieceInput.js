@@ -7,9 +7,8 @@ import {addPiece} from "../actions/addPiece";
 class PieceInput extends React.Component {
     state = {
         name:'',
-        description:''
-        // url:'',
-        // featured_image: null
+        description:'',
+         featured_image: null
 
     }
 
@@ -20,22 +19,26 @@ class PieceInput extends React.Component {
 
     }
 
-    // onImageChange = (event) => {
-    //     if (event.target.files && event.target.files[0]) {
-    //       this.setState({
-    //         featured_image: URL.createObjectURL(event.target.files[0])
-    //       });
-    //     }
-    //    }
+    onImageChange = event => { 
+        this.setState({ featured_image: event.target.files[0] });
+      }
     
 
     handleSubmit = (event) => {
         event.preventDefault()
+        const formData = new FormData()
+        formData.append ('name', this.state.name)
+        formData.append ('description', this.state.description)
+        formData.append('featured_image', this.state.featured_image)
+        fetch('http://localhost:3000/api/v1/galleries',{
+            method: 'POST',
+            body: formData
+        })
         this.props.addPiece(this.state, this.props.gallery.id)
         this.setState({
             name:'',
             description:'',
-            //featured_image: null
+            featured_image: null
         })
     }
 
@@ -58,10 +61,10 @@ class PieceInput extends React.Component {
                     <label>Description: </label>
                     <input type='text' name='description' value={this.state.description} onChange={this.handleChange} placeholder='description'/><br/>
                     <input type="submit" />
-                    {/* <label>Add Image: </label>
+                    <label>Add Image: </label>
                     <input type='file' accept='image/*'  name='featured_image' multiple={false} onChange={this.onImageChange}/>
                     <img id="target" src={this.state.featured_image} alt={''}/>
-                    <br></br><br></br><br></br> */}
+                    <br></br><br></br><br></br>
                    
                 </form>
 
