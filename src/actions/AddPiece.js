@@ -13,3 +13,4 @@ export const addPiece = (piece,galleryId) =>{
         .then(gallery => dispatch({type:'ADD_PIECE', payload:gallery}))
     }
 }
+

@@ -13,8 +13,7 @@ class Pieces extends React.Component {
         return(
             <div>
                 {this.props.pieces && this.props.pieces.map(piece =>
-                    <li key={piece.id}>{piece.name} - {piece.description}  <button type="button" class="btn btn-outline-danger" onClick={() => this.handleDelete(piece)}>Delete</button></li>
-                    )}
+                    <li key={piece.id}>{piece.name} - {piece.description}  <button onClick={() => this.handleDelete(piece)}>Delete</button></li>)}
             </div>
         )
     }
