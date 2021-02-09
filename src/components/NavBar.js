@@ -17,7 +17,7 @@ const NavBar = () => {
       </NavLink>
 
       <NavLink to="/galleries/new" style={link} className="navbar-link">
-        New Gallery
+        Gallery
       </NavLink>
   
           </div>)}

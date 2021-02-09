@@ -7,7 +7,6 @@ class PieceInput extends React.Component {
     state = {
         name:'',
         description:'',
-        url:'',
         featured_image: null
 
     }
@@ -49,7 +48,7 @@ class PieceInput extends React.Component {
                     <input type='text' name='description' value={this.state.description} onChange={this.handleChange} placeholder='description'/><br/>
                     <label>Add Image: </label>
                     <input type='file' accept='image/*'  name='featured_image' multiple={false} onChange={this.onImageChange}/>
-                    <img id="target" src={this.state.featured_image}/>
+                    <img id="target" src={this.state.featured_image} alt={''}/>
                     <button type="submit">Submit</button>
                     <br></br><br></br><br></br>
                  

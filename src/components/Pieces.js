@@ -5,15 +5,15 @@ import { deletePiece} from '../actions/deletePiece'
 class Pieces extends React.Component {
     state = {}
  
-    handleDelete = (piece) =>{
-        this.props.deletePiece(piece.id,piece.gallery_id)
+    handleDelete = (piece) => {
+        this.props.deletePiece(piece.id, piece.gallery_id)
     }
 
     render(){
         return(
             <div>
                 {this.props.pieces && this.props.pieces.map(piece =>
-                    <li key={piece.id}>{piece.name} - {piece.description} - {piece.url} <button onClick={() => this.handleDelete(piece)}>Delete</button></li>
+                    <li key={piece.id}>{piece.name} - {piece.description}<button onClick={() => this.handleDelete(piece)}>Delete</button></li>
                     )}
             </div>
         )
@@ -22,4 +22,4 @@ class Pieces extends React.Component {
      
 
 }
- export default connect(null,{deletePiece})(Pieces)
+ export default connect(null, {deletePiece})(Pieces)
