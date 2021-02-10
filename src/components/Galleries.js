@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route, Link } from 'react-router-dom';
 import Gallery from './Gallery'
-import GalleryInput from './GalleryInput'
+
 
 
 const Galleries = (props) => {

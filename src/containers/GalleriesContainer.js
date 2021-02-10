@@ -32,4 +32,4 @@ const mapStateToProps = state => {
 
 }
 
-export default connect(mapStateToProps, {fetchGalleries})(GalleriesContainer)
+export default connect(mapStateToProps, {fetchGalleries}) (GalleriesContainer)
