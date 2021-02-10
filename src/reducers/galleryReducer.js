@@ -23,6 +23,15 @@ export default function galleryReducer(state = {galleries: []}, action) {
             }
           })
           return {...state, galleries: galleriesTwo}
+          case 'EDIT_GALLERY':
+          let galleriesThree = state.galleries.map(gallery => {
+            if (gallery.id === action.payload.id) {
+              return action.payload
+            } else {
+              return gallery
+            }
+          })
+          return {...state, galleries: galleriesThree}
         default:
             return state
 
