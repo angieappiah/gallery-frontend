@@ -10,7 +10,7 @@ const Home = () => {
           <h3 className="home-logo">BAMAS</h3>
           <h4 className="home-subheader">Art is Life</h4>
           <Link to="/galleries">
-          <Button className="btn btn-dark"> See galleries</Button>
+          <Button > See galleries</Button>
           </Link>
         
         </div>

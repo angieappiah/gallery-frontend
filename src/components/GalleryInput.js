@@ -37,4 +37,4 @@ class GalleryInput extends React.Component{
     }
 }
 
-export default connect (null, {addGallery}) (GalleryInput)
+export default connect (null, {addGallery})(GalleryInput)
