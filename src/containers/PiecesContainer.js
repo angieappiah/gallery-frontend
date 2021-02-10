@@ -9,6 +9,7 @@ class PiecesContainer extends React.Component {
             <div>
                 <PieceInput gallery={this.props.gallery}/>
                 <Pieces pieces={this.props.gallery && this.props.gallery.pieces}/>
+                
             </div>
 
         )
