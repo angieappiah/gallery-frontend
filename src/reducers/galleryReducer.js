@@ -15,23 +15,14 @@ export default function galleryReducer(state = {galleries: []}, action) {
         })
         return {...state, galleries: galleries}
         case 'DELETE_PIECE':
-          let galleriesTwo = state.galleries.map(gallery => {
+          let galleriesDelete = state.galleries.map(gallery => {
             if (gallery.id === action.payload.id) {
               return action.payload
             } else {
               return gallery
             }
           })
-          return {...state, galleries: galleriesTwo}
-          case 'EDIT_GALLERY':
-          let galleriesThree = state.galleries.map(gallery => {
-            if (gallery.id === action.payload.id) {
-              return action.payload
-            } else {
-              return gallery
-            }
-          })
-          return {...state, galleries: galleriesThree}
+          return {...state, galleries: galleriesDelete}
         default:
             return state
 
