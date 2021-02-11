@@ -5,9 +5,9 @@ import Home from './components/Home';
 import About from './components/About';
 import NavBar from './components/NavBar';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import PiecesContainer from './containers/PiecesContainer'
 import GalleriesContainer from './containers/GalleriesContainer'
 import Galleries from './components/Galleries';
+
 
 class App extends React.Component {
 
