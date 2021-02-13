@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom'
 
 const NavBar = () => {
     return (

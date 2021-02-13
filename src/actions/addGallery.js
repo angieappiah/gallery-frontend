@@ -10,8 +10,10 @@ export const addGallery = (data) =>{
         body: JSON.stringify(data)
         })
         .then(response => response.json())
-        .then(gallery => dispatch({type: 'ADD-GALLERY', payload: gallery}))
-    }
+        .then(gallery => {if (gallery.error){alert(gallery.error)}
+    else{ dispatch({type: 'ADD-GALLERY', payload: gallery})
+    }})
+}
 
 }
   
