@@ -7,6 +7,8 @@ import NavBar from './components/NavBar';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import GalleriesContainer from './containers/GalleriesContainer'
 import Galleries from './components/Galleries';
+import Artworks from './containers/Artworks';
+import GalleryInput from './components/GalleryInput';
 
 
 class App extends React.Component {
@@ -16,8 +18,10 @@ class App extends React.Component {
       <Router>
            <div className="App">
            <NavBar />
-           <Route exact path="/about" component={About} />
            <Route exact path="/" component={Home} />
+           <Route exact path="/about" component={About} />
+           {/* <Route exact path="/galleries/new" component={GalleryInput} /> */}
+           <Route exact path="/galleries/:id" component={Artworks} />
         <GalleriesContainer/>
      </div>
 

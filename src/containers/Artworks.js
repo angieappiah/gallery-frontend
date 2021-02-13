@@ -1,7 +1,10 @@
 import React from 'react';
+import { connect } from "react-redux";
 import {fetchArtworks} from '../actions/fetchArtworks'
+import {Route , Switch} from 'react-router-dom'
 import Galleries from '../components/Galleries';
-import GalleryInput from '../components/GalleryInput';
+
+
 
 class Artworks extends React.Component{
     componentDidMount(){
@@ -24,4 +27,4 @@ const mapStateToProps = state => {
 
 }
 
-export default connect(mapStateToProps, {fetchArtworks}) (Artworks)
+export default connect(mapStateToProps, {fetchArtworks})(Artworks)
