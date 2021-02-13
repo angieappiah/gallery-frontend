@@ -18,7 +18,7 @@ class App extends React.Component {
       <Router>
            <div className="App">
            <NavBar />
-           <GalleriesContainer/>
+            <GalleriesContainer/>
            <Route exact path="/" component={Home} />
            <Route exact path="/about" component={About} />
            <Route exact path="/galleries/:id" component={Artworks} />

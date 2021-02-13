@@ -18,11 +18,7 @@ const NavBar = () => {
       </NavLink>
 
       <NavLink to="/galleries/new" style={link} className="navbar-link">
-       Gallery
-      </NavLink>
-
-      <NavLink to="/arts" style={link} className="navbar-link">
-       Artworks
+       Add New Gallery
       </NavLink>
   
           </div>)}
