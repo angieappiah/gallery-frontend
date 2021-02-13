@@ -13,12 +13,12 @@ const NavBar = () => {
         About
       </NavLink>
 
-      <NavLink to="/galleries" style={link} className="navbar-link">
-      Galleries
+      <NavLink to="/artworks" style={link} className="navbar-link">
+        all
       </NavLink>
 
       <NavLink to="/galleries/new" style={link} className="navbar-link">
-       Add New Gallery
+       New Style
       </NavLink>
   
           </div>)}

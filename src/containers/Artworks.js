@@ -11,7 +11,7 @@ class Artworks extends React.Component{
         this.props.fetchArtworks()}
 
         render(){
-            let galleries=this.props.galleries
+            const {galleries} =this.props
             return(
                 <div>
                     <Galleries galleries={galleries}/>

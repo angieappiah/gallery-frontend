@@ -25,6 +25,8 @@ export default function galleryReducer(state = {galleries: [], pieces: []}, acti
             }
           })
           return {...state, galleries: galleriesDelete}
+          case 'DELETE_GALLERY':
+            return {galleries: action.payload}
         default:
             return state
 
