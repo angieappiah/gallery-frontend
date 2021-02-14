@@ -9,7 +9,7 @@ const Galleries = (props) => {
         <div>
            {props.galleries.map(gallery=>
            <li key={gallery.id}>
-            <Link to={`/galleries/${gallery.id}`}>{gallery.style}<button onClick={() => this.handleDelete(gallery)}>Delete</button></Link>
+            <Link to={`/galleries/${gallery.id}`}>{gallery.style}</Link>
             </li>)} 
         </div>
     )

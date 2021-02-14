@@ -7,8 +7,6 @@ const Gallery = (props) =>{
 
     let gallery = props.galleries.filter(gallery => gallery.id == props.match.params.id)[0]
     console.log(gallery)
-    
-
     return(
         <div>
         <h2>

@@ -1,8 +1,8 @@
-export const addGallery= (data) => {
+export const editGallery= (data) => {
 	
 
     return (dispatch) => {
-      fetch('http://localhost:3000/api/v1/galleries', {
+      fetch(`http://localhost:3000/api/v1/galleries/${data.id}`, {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
@@ -13,11 +13,9 @@ export const addGallery= (data) => {
         .then(response => response.json())
         .then(gallery => {
           dispatch({
-          type: 'ADD_GALLERY',
+          type: 'EDIT_GALLERY',
           payload: gallery
         })
       })
     }
   }
-
-  

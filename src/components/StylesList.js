@@ -2,7 +2,7 @@ import React from 'react';
 	
 	const StylesList = ({ galleries }) => {
 	  
-	    const renderGalleries = galleries.map(gallery =>
+	    const renderStyles = galleries.map(gallery =>
 	       <Gallery key={gallery.id} gallery={gallery} />
 	    );
 	  
