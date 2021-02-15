@@ -11,9 +11,12 @@ class Pieces extends React.Component {
 
     render(){
         return(
-            <div>
+            <div class="header">
+                 <h2>These Are the Pieces in this style</h2>
+                 <h5>Click On The X button at anytime to delete Piece(s)</h5>
                 {this.props.pieces && this.props.pieces.map(piece =>
                     <li key={piece.id}> NAME: {piece.name} ---  DESCRIPTION: {piece.description}  <button onClick={() => this.handleDelete(piece)}>X</button></li>)}
+                    <br></br><br></br>
             </div>
         )
     }

@@ -54,6 +54,7 @@
   }
   
   
+  
   .about {
     background-image: url(./wallpaper.jpg);
     background-position: center;
@@ -95,6 +96,14 @@
   .galleries {
     width: 90%;
     margin: auto;
+  }
+
+  .header {
+    padding: 60px;
+    text-align: center;
+    background: #02493b;
+    color: white;
+    font-size: 20px;
   }
 
   .pieces-input {

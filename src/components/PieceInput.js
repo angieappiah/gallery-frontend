@@ -1,6 +1,5 @@
 import React from 'react'
 import {connect} from "react-redux";
-import { FormControl, FormGroup } from 'react-bootstrap';
 import {addPiece} from "../actions/addPiece";
 
 
@@ -29,15 +28,13 @@ class PieceInput extends React.Component {
 
     render(){
         return(
-            <div className="piece-form">
+            <div>
                 <form onSubmit={this.handleSubmit}>  
-                  <FormGroup>
                     <label>Add New Piece: </label>
-                    <FormControl  type='text' name='name' value={this.state.name} onChange={this.handleChange} placeholder='name'/><br/>
+                    <input type='text' name='name' value={this.state.name} onChange={this.handleChange} placeholder='name'/><br/>
                     <label>Description: </label>
-                    <FormControl type='text' name='description' value={this.state.description} onChange={this.handleChange} placeholder='description' /><br/>
-                    <button type="submit">Submit</button>
-                    </FormGroup>
+                    <input type='text' name='description' value={this.state.description} onChange={this.handleChange} placeholder='description'/><br/>
+                    <input type="submit" />
                     <br></br><br></br><br></br> 
                 </form>
             </div>

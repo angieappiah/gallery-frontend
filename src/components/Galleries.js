@@ -7,9 +7,10 @@ import GalleryInput from './GalleryInput'
 const Galleries = (props) => {
     return(
         <div>
-           {props.galleries.map(gallery=> <h4 key={gallery.id}>
+           {props.galleries.map(gallery=>
+           <li key={gallery.id}>
             <Link to={`/galleries/${gallery.id}`}>{gallery.style}</Link>
-            </h4>)} 
+            </li>)} 
         </div>
     )
 }

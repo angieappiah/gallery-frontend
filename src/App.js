@@ -21,7 +21,6 @@ class App extends React.Component {
            <GalleriesContainer/>
            <Route exact path="/" component={Home} />
            <Route exact path="/about" component={About} />
-           <Route exact path="/list" component={Artworks} />
            <Route exact path="/galleries/:id" component={Artworks} />   
      </div>
       </Router>
