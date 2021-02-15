@@ -27,7 +27,6 @@ class GalleryInput extends React.Component{
     render(){
       return(
           <div>
-           
              <form onSubmit={this.handleSubmit}>
                  <label> Create A New Style:</label>
                  <input type='text' placeholder='Style' value={this.state.style} name="style" onChange={this.handleChange}/><br/>

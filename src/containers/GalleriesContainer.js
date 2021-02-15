@@ -9,6 +9,7 @@ import GalleryInput from '../components/GalleryInput';
 
 
 
+
 class GalleriesContainer extends React.Component{
     componentDidMount(){
         this.props.fetchGalleries()
