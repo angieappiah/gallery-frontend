@@ -1,19 +1,19 @@
-import React from 'react';
+// import React from 'react';
 	
-	const StylesList = ({ galleries }) => {
+// 	const StylesList = ({ galleries }) => {
 	  
-	    const renderStyles = galleries.map(gallery =>
-	       <Gallery key={gallery.id} gallery={gallery} />
-	    );
+// 	    const gallery = galleries.map(gallery =>
+// 	       <Gallery key={gallery.id} gallery={gallery} />
+// 	    );
 	  
-	      return (
-	        <div className="Styles-list">
-	            <div className="row">
-	              {renderStyles}
-	            </div> 
-	        </div>
-	      )
+// 	      return (
+// 	        <div className="Styles-list">
+// 	            <div className="row">
+// 	              {gallery}
+// 	            </div> 
+// 	        </div>
+// 	      )
 	  
-	  }
+// 	  }
 	  
-	  export default StylesList;
+// 	  export default StylesList;

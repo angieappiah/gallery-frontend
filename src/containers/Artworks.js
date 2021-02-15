@@ -13,7 +13,9 @@ class Artworks extends React.Component{
             const {galleries} =this.props
             return(
                 <div>
-                    <Galleries galleries={galleries}/>
+                    <Galleries galleries={galleries} />
+                    {this.props.galleries && this.props.galleries.map(gallery =>
+                    <li key={gallery.id}>{gallery.style} <button onClick={() => this.handleDelete(galleries)}>Delete</button></li>)}
                 </div>
             )
         }
