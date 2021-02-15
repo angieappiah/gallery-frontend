@@ -13,7 +13,7 @@ const NavBar = () => {
         About
       </NavLink>
 
-      <NavLink to="/artworks" style={link} className="navbar-link">
+      <NavLink to="/stylelist" style={link} className="navbar-link">
         all
       </NavLink>
 

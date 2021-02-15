@@ -8,11 +8,9 @@ import React from 'react';
 	  
 	      return (
 	        <div className="Styles-list">
-	          <div className="container-fluid">
 	            <div className="row">
 	              {renderStyles}
-	            </div>
-	          </div>  
+	            </div> 
 	        </div>
 	      )
 	  

@@ -5,7 +5,6 @@ import {Route , Switch} from 'react-router-dom'
 import Galleries from '../components/Galleries';
 
 
-
 class Artworks extends React.Component{
     componentDidMount(){
         this.props.fetchArtworks()}

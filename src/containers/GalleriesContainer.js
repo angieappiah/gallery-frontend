@@ -23,8 +23,7 @@ class GalleriesContainer extends React.Component{
                 <Route path ='/galleries/new'  component={GalleryInput}/>
                 <Route path = '/galleries/:id' render={(routerProps) => <Gallery{...routerProps} galleries={this.props.galleries}/>}/>
                 <Route path = '/galleries'     render={(routerProps) => <Galleries{...routerProps} galleries={this.props.galleries}/>}/>
-                </Switch> 
-               
+                </Switch>  
             </div>
             
         )
