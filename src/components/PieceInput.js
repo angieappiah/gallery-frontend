@@ -30,10 +30,10 @@ class PieceInput extends React.Component {
         return(
             <div>
                 <form onSubmit={this.handleSubmit}>  
-                    <label>Add New Piece: </label>
+                    <label>Add New Piece: </label><br></br>
                     <input type='text' name='name' value={this.state.name} onChange={this.handleChange} placeholder='name'/><br/>
-                    <label>Description: </label>
-                    <input type='text' name='description' value={this.state.description} onChange={this.handleChange} placeholder='description'/><br/>
+                    <label>Description: </label><br></br>
+                    <textarea name='description' value={this.state.description} onChange={this.handleChange} placeholder='description'/><br/>
                     <input type="submit" />
                     <br></br><br></br><br></br> 
                 </form>
