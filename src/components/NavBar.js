@@ -17,6 +17,10 @@ const NavBar = () => {
        Galleries
       </NavLink>
 
+      <NavLink to="/likes" style={link} className="navbar-link">
+       favorites
+      </NavLink>
+
       <NavLink to="/galleries/new" style={link} className="navbar-link">
        New Style
       </NavLink>

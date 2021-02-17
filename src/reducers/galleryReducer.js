@@ -1,5 +1,5 @@
 
-export default function galleryReducer(state = {galleries: [], pieces: []}, action) {
+export default function galleryReducer(state = {galleries: []}, action) {
   switch (action.type) {
     case 'FETCH_GALLERIES':
       return {galleries: action.payload}
@@ -23,10 +23,15 @@ export default function galleryReducer(state = {galleries: [], pieces: []}, acti
             }
           })
           return {...state, galleries: galleriesDelete}
+          case 'LIKE-FAVORITE':
+            state.count++;
+            return state;
+  
         default:
             return state
 
     }
+
   
    
 }

@@ -6,8 +6,7 @@ import Gallery from '../components/Gallery'
 import {fetchGalleries} from '../actions/fetchGalleries'
 import Galleries from '../components/Galleries';
 import GalleryInput from '../components/GalleryInput';
-
-
+import Likes from "../components/Likes";
 
 
 class GalleriesContainer extends React.Component{
@@ -22,6 +21,7 @@ class GalleriesContainer extends React.Component{
             <div>
                 <Switch>
                 <Route path ='/galleries/new'  component={GalleryInput}/>
+                <Route path ='/likes'  component={Likes}/>
                 <Route path = '/galleries/:id' render={(routerProps) => <Gallery{...routerProps} galleries={this.props.galleries}/>}/>
                 <Route path = '/galleries'     render={(routerProps) => <Galleries{...routerProps} galleries={this.props.galleries}/>}/>
                 </Switch>  

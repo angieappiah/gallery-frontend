@@ -1,4 +1,5 @@
 import React from 'react'
+import Pieces from "./Pieces";
 
 class LikePieces extends React.Component{
     state = {

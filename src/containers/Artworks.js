@@ -9,8 +9,6 @@ class Artworks extends React.Component{
     componentDidMount(){
         this.props.fetchArtworks()}
 
-
-
         render(){
             const {galleries} =this.props
             return(
