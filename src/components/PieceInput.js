@@ -42,4 +42,7 @@ class PieceInput extends React.Component {
     }
     
 }
-export default connect(null,{addPiece})(PieceInput)
+
+
+export default connect(null,{ addPiece })(PieceInput)
+

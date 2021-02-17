@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import { deletePiece} from '../actions/deletePiece'
+import LikePieces from './LikePieces'
 
 class Pieces extends React.Component {
     state = {}
@@ -16,6 +17,7 @@ class Pieces extends React.Component {
                  <h5>Click On The X button at anytime to delete Piece(s)</h5>
                 {this.props.pieces && this.props.pieces.map(piece =>
                     <li key={piece.id}> NAME: {piece.name} ---  DESCRIPTION: {piece.description}  <button onClick={() => this.handleDelete(piece)}>X</button></li>)}
+                     <LikePieces />
                     <br></br><br></br>
             </div>
         )
