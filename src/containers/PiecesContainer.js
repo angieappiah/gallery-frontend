@@ -1,6 +1,7 @@
 import React from 'react'
 import PieceInput from '../components/PieceInput'
 import Pieces from '../components/Pieces'
+import Likes from '../components/Likes'
 
 class PiecesContainer extends React.Component {
 

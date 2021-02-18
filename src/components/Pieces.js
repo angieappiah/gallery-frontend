@@ -1,18 +1,17 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import { deletePiece} from '../actions/deletePiece'
-import { likePiece} from '../actions/likePiece'
+import Likes from "./Likes";
 
 class Pieces extends React.Component {
-    state = {  
-        likes: 12
-       }
+    state = {
+        likes: 7
+    }
 
-    handleClick = (piece)=>{
-        this.props.likePiece(piece.id)
-        this.setState(({ likes }) => {
-            return { likes: likes + 1 };
-          });
+    handleClick = () => {
+        this.setState(State => {
+           return {likes: State.likes +1}
+        })
     }
  
     handleDelete = (piece) => {
@@ -26,14 +25,12 @@ class Pieces extends React.Component {
                  <h5>Click On The X button at anytime to delete Piece(s)</h5>
                 {this.props.pieces && this.props.pieces.map(piece =>
                 <li key={piece.id}> NAME: {piece.name} ---  DESCRIPTION: {piece.description} LIKES: {piece.likes} 
-                <button type='button' onClick={() => this.handleClick(piece)}>❤️<h5>{this.state.likes}</h5></button>
+                <button onClick={() => this.handleClick(piece)}> click </button>{this.state.likes}
                 <button onClick={() => this.handleDelete(piece)}> Delete </button></li>)}
                     <br></br><br></br>
             </div>
         )
-    }
-
-     
+    }    
 
 }
- export default connect(null, {deletePiece , likePiece})(Pieces)
+ export default connect(null, {deletePiece})(Pieces)

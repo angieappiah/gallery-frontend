@@ -6,9 +6,8 @@ import About from './components/About';
 import NavBar from './components/NavBar';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import GalleriesContainer from './containers/GalleriesContainer'
-import Galleries from './components/Galleries';
-import Artworks from './containers/Artworks';
-import GalleryInput from './components/GalleryInput';
+import Artworks from './components/Artworks';
+import Likes from './components/Likes';
 
 
 

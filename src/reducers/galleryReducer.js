@@ -24,7 +24,14 @@ export default function galleryReducer(state = {galleries: []}, action) {
           })
           return {...state, galleries: galleriesDelete}
           case 'LIKE-PIECE':
-            return {...state, galleries: [...state.galleries, action.payload]}
+            let likes = state.galleries.map(gallery => {
+              if (gallery.id === action.payload.id) {
+                return action.payload
+              } else {
+                return gallery
+              }
+            })
+            return {...state, galleries: likes}
   
         default:
             return state
