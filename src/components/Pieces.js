@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import { deletePiece} from '../actions/deletePiece'
+import { likePiece} from '../actions/likePiece'
 import Likes from "./Likes";
 
 class Pieces extends React.Component {
@@ -33,4 +34,4 @@ class Pieces extends React.Component {
     }    
 
 }
- export default connect(null, {deletePiece})(Pieces)
+ export default connect(null, {likePiece, deletePiece})(Pieces)
