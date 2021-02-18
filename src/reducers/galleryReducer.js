@@ -23,9 +23,8 @@ export default function galleryReducer(state = {galleries: []}, action) {
             }
           })
           return {...state, galleries: galleriesDelete}
-          case 'LIKE-FAVORITE':
-            state.count++;
-            return state;
+          case 'LIKE-PIECE':
+            return {...state, galleries: [...state.galleries, action.payload]}
   
         default:
             return state

@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { deletePiece} from '../actions/deletePiece'
+import { likePiece} from '../actions/likePiece'
 import LikePieces from './LikePieces'
 import { Badge } from 'react-bootstrap';
 
@@ -11,14 +11,10 @@ class Likes extends React.Component {
 
 
     handleClick = () => {
+        this.props.likePiece(piece.id, piece.gallery_id)
         this.setState(State => {
            return {count: State.count +1}
         })
-    }
-    
- 
-    handleDelete = (piece) => {
-        this.props.deletePiece(piece.id, piece.gallery_id)
     }
 
     
@@ -41,4 +37,4 @@ class Likes extends React.Component {
      
 
 }
- export default connect(null, {deletePiece})(Likes)
+ export default connect(null, {likePiece})(Likes)
