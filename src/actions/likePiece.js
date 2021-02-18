@@ -5,7 +5,7 @@ export const likePiece= (pieceId) =>{
             headers: {
                 'Content-Type': 'application/json'
             },
-            method: 'POST',
+            method: 'PATCH',
             body: JSON.stringify(pieceId)
         })
         .then(response => response.json())
