@@ -5,7 +5,7 @@ import Pieces from "./Pieces";
 class Likes extends React.Component{
 
     state = {
-        likes: 0
+
     }
 
     handleClick = ()=>{
