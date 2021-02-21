@@ -1,7 +1,7 @@
 
-const initialState = {galleries: [], count:0}
+// const initialState = {galleries: []}
 
-export default function galleryReducer(state = initialState, action) {
+export default function galleryReducer(state = {galleries: []}, action) {
   switch (action.type) {
     case 'FETCH_GALLERIES':
       return {galleries: action.payload}
@@ -25,9 +25,6 @@ export default function galleryReducer(state = initialState, action) {
             }
           })
           return {...state, galleries: galleriesDelete}
-          case 'INCREASE_COUNT':
-            const {count} = state
-            return ({...state, count: count+1})
   
         default:
             return state

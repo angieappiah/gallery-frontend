@@ -1,7 +1,7 @@
 import React from 'react'
 import PieceInput from '../components/PieceInput'
 import Pieces from '../components/Pieces'
-import Likes from '../components/Likes'
+
 
 class PiecesContainer extends React.Component {
 
@@ -9,8 +9,7 @@ class PiecesContainer extends React.Component {
         return(
             <div>
                 <PieceInput gallery={this.props.gallery}/>
-                <Pieces pieces={this.props.gallery && this.props.gallery.pieces}/>
-                
+                <Pieces pieces={this.props.gallery && this.props.gallery.pieces}/> 
             </div>
 
         )

@@ -10,9 +10,3 @@ export const deletePiece = (pieceId, galleryId) => {
     }
 }
 
-
-export const likePiece = () => ({
-    type: "INCREASE-COUNT"
-
-})
-
