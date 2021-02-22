@@ -1,19 +1,15 @@
+
 import React from 'react'
 import {connect} from 'react-redux'
-import { deletePiece,likePiece} from '../actions/deletePiece'
-import Likes from "./Likes";
+import { deletePiece} from '../actions/deletePiece'
+import LikePieces from './LikePieces'
+
 
 class Pieces extends React.Component {
     state = {
-        count: 0
+    
     }
 
-    handleClick = (piece) => {
-        // this.props.likePiece(piece.id, piece.gallery_id)
-        this.setState(prevState => ({
-            count: prevState.count + 1
-          }));
-    }
  
     handleDelete = (piece) => {
         this.props.deletePiece(piece.id, piece.gallery_id)
@@ -24,14 +20,12 @@ class Pieces extends React.Component {
             <div class="header">
                  <h2>These Are the Pieces in this style</h2>
                  <h5>Click On The X button at anytime to delete Piece(s)</h5>
-                {this.props.pieces && this.props.pieces.map(piece =>
-                <li key={piece.id}> NAME: {piece.name} ---  DESCRIPTION: {piece.description}  
-                <button onClick={() => this.handleClick(piece)}> Like(s)</button>{this.state.count}
-                <button onClick={() => this.handleDelete(piece)}> Delete </button></li>)}
+                  {this.props.pieces && this.props.pieces.map(piece =>
+                <ul class="one">NAME: {piece.name}--DESCRIPTION: {piece.description} -- LIKES: {piece.likes} <LikePieces key={piece.id} piece={piece}/><button onClick={() => this.handleDelete(piece)}>X</button></ul>)}
                 <br></br><br></br>
             </div>
         )
     }    
 
 }
- export default connect(null, { deletePiece, likePiece})(Pieces)
+ export default connect(null, { deletePiece})(Pieces)
