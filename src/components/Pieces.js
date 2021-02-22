@@ -20,7 +20,7 @@ class Pieces extends React.Component {
                  <h2>These Are the Pieces in this style</h2>
                  <h5>Click On The X button at anytime to delete Piece(s)</h5>
                   {this.props.pieces && this.props.pieces.map(piece =>
-                <li>NAME: {piece.name}--DESCRIPTION: {piece.description} <LikePieces key={piece.id} piece={piece}/><button onClick={() => this.handleDelete(piece)}>X</button></li>)}
+                <ul class="one">NAME: {piece.name}--DESCRIPTION: {piece.description} -- LIKES: {piece.likes} <LikePieces key={piece.id} piece={piece}/><button onClick={() => this.handleDelete(piece)}>X</button></ul>)}
                 <br></br><br></br>
             </div>
         )

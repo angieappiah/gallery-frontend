@@ -6,7 +6,8 @@ import {addPiece} from "../actions/addPiece";
 class PieceInput extends React.Component {
     state = {
         name:'',
-        description:''
+        description:'',
+        likes: 0
     }
     
     handleChange = (event) => {
