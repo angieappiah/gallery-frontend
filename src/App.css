@@ -29,6 +29,13 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
+  .like-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+  }
   
   .home-logo {
     font-family: 'Century Gothic';

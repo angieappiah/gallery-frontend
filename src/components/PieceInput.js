@@ -1,6 +1,5 @@
 import React from 'react'
 import {connect} from "react-redux";
-import {likePiece} from "../actions/likePiece";
 import {addPiece} from "../actions/addPiece";
 
 

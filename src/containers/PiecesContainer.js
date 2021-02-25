@@ -1,9 +1,14 @@
 import React from 'react'
+import { connect } from "react-redux";
 import PieceInput from '../components/PieceInput'
+import {fetchGalleries} from '../actions/fetchGalleries'
 import Pieces from '../components/Pieces'
 
 
 class PiecesContainer extends React.Component {
+    componentDidMount(){
+        this.props.fetchGalleries()
+    }
 
     render(){
         return(
@@ -17,4 +22,10 @@ class PiecesContainer extends React.Component {
     }
 
 }
-export default PiecesContainer
+const mapStateToProps = state => {
+    return {
+        galleries: state.galleries
+    }
+
+}
+export default connect(mapStateToProps, {fetchGalleries}) (PiecesContainer)

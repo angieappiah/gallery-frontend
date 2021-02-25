@@ -1,5 +1,10 @@
 
-const initialState = {galleries: [], count:0}
+
+const initialState =
+{
+    galleries: [],
+    liked: 0
+}
 
 export default function galleryReducer(state = initialState, action) {
   switch (action.type) {
@@ -25,18 +30,27 @@ export default function galleryReducer(state = initialState, action) {
             }
           })
           return {...state, galleries: galleriesDelete}
-          case 'INCREASE_COUNT':
-            const {count} = state
-            return ({...state, count: count+1})
+          case 'INCREASE_LIKES':
+            let likes = state.galleries.map(gallery => {
+              if (gallery.id === action.payload.id) {
+                return {...state, likes: likes+1}
+              } else {
+                return gallery
+              }
+            })
+            return {...state, likes: likes+1}
+            // const {liked} = state
+            // return {...state, liked: liked+1}
+          // case 'INCREASE_LIKES':
+            // const {likes} = state
+            // return ({...state, likes: likes+1})
   
         default:
             return state
-
-    }
-
-  
-   
+    }   
 }
+
+
 
         
 

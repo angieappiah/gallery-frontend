@@ -2,17 +2,17 @@ import React from 'react'
 
 class LikePieces extends React.Component{
     state = {
-        count: 0
+        likes: 2
     }
 
     handleClick = ()=>{
-        this.setState ({count: this.state.count+1})
+        this.setState ({likes: this.state.likes+1})
     }
 
     render(){
         return(
             <div>
-                <button onClick={this.handleClick}>❤️</button>{this.state.count}
+                <button onClick={this.handleClick}>❤️</button>{this.state.likes}
             </div>
         )
     }  

@@ -8,6 +8,7 @@ import  galleryReducer  from './reducers/galleryReducer'
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(galleryReducer, composeEnhancer(applyMiddleware(thunk)))
