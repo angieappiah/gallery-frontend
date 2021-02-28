@@ -1,12 +1,9 @@
-import { pieceLiker } from "../actions/pieceLiker"
-
-const initialState =
-{
-    galleries: [],
-    // liked: 0
-}
-export default function galleryReducer(state = initialState, action) {
-  // let update; 
+// const initialState =
+// {
+//     galleries: [],
+//     //  likes: 0
+// }
+export default function galleryReducer(state = [], action) {
   switch (action.type) {
     case 'FETCH_GALLERIES':
       return {galleries: action.payload}
@@ -31,14 +28,8 @@ export default function galleryReducer(state = initialState, action) {
           })
           return {...state, galleries: galleriesDelete}
           case 'INCREASE_LIKES':
-            let gallerieslike = state.galleries.map(gallery => {
-              if (gallery.id === action.payload.id) {
-                return action.payload+1
-              } else {
-                return gallery
-              }
-            })
-            return {...state, galleries: gallerieslike}
+            return {...state, state: state+1}
+
         default:
             return state
     }   

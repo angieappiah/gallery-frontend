@@ -2,11 +2,11 @@ import React from 'react'
 import {connect} from "react-redux";
 import {addPiece} from "../actions/addPiece";
 
-
 class PieceInput extends React.Component {
     state = {
         name:'',
-        description:''
+        description:'',
+        likes:0
     }
     
     handleChange = (event) => {
@@ -21,7 +21,8 @@ class PieceInput extends React.Component {
         this.props.addPiece(this.state, this.props.gallery.id)
         this.setState({
             name:'',
-            description:''
+            description:'',
+            likes:0
         })
     }
 

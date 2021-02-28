@@ -1,13 +1,7 @@
 
-// const addLikes = (piece) => {
-//     return {type: 'INCREASE_LIKES',
-//     piece}
-// }
-
-export const pieceLiker = (piece,pieceId) => {
-    //const likedPiece = Object.assign(piece, { likes: piece.likes + 1 })
+export const pieceLiker = (pieceId, galleryId) => {
     return(dispatch) =>{
-      return fetch(`http://localhost:3000/api/v1/pieces/${pieceId}`,{
+      return fetch(`http://localhost:3000/api/v1/galleries/${galleryId}/pieces/${pieceId}`,{
            method: 'PATCH'
 
        })

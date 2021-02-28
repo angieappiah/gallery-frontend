@@ -1,10 +1,7 @@
-
 import React from 'react'
 import {connect} from 'react-redux'
 import { deletePiece} from '../actions/deletePiece'
 import { pieceLiker} from '../actions/pieceLiker'
-import LikePieces from './LikePieces'
-import Liker from './Liker'
 
 
 class Pieces extends React.Component {
@@ -12,8 +9,11 @@ class Pieces extends React.Component {
         pieces:{}
     
     }
+
+    handleClick = (piece) => {
+        this.props.pieceLiker(piece.id, piece.gallery_id)
+    }
     
- 
     handleDelete = (piece) => {
         this.props.deletePiece(piece.id, piece.gallery_id)
     }
@@ -24,10 +24,8 @@ class Pieces extends React.Component {
                  <h2>These Are the Pieces in this style</h2>
                  <h5>Click On The X button at anytime to delete Piece(s)</h5>
                   {this.props.pieces && this.props.pieces.map(piece =>
-                <ul class="one">NAME: {piece.name}--DESCRIPTION: {piece.description} -- <button>LIKES:{piece.likes}</button>
-              <button
-               onClick ={this.props.pieceLiker}
-              > {piece.likes}</button> 
+                <ul class="one">NAME: {piece.name}--DESCRIPTION: {piece.description} -- {piece.likes}
+                <button className="like-button" onClick={() => this.handleClick(piece)}> Like </button> 
                 <button onClick={() => this.handleDelete(piece)}>X</button></ul>)}
                 <br></br><br></br>
             </div>
