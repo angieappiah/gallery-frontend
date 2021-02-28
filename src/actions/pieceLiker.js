@@ -1,15 +1,20 @@
 
-export const pieceLiker = (piece,galleryId) =>{
+// const addLikes = (piece) => {
+//     return {type: 'INCREASE_LIKES',
+//     piece}
+// }
 
-  return (dispatch) =>{
-    fetch(`http://localhost:3000/api/v1/galleries/${galleryId}/pieces`,{
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(piece)
-    })
-    .then(response => response.json())
-    .then(gallery => dispatch({type:'INCREASE_LIKES', payload:gallery}))
+export const pieceLiker = (piece,pieceId) => {
+    //const likedPiece = Object.assign(piece, { likes: piece.likes + 1 })
+    return(dispatch) =>{
+      return fetch(`http://localhost:3000/api/v1/pieces/${pieceId}`,{
+           method: 'PATCH'
+
+       })
+       .then(response => response.json())
+       .then(gallery => dispatch({type:'INCREASE_LIKES', payload:gallery}))
+   }
 }
-}
+
+ 
+
