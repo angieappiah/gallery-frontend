@@ -1,9 +1,5 @@
-// const initialState =
-// {
-//     galleries: [],
-//     //  likes: 0
-// }
-export default function galleryReducer(state = [], action) {
+
+export default function galleryReducer(state =  {galleries: []}, action) {
   switch (action.type) {
     case 'FETCH_GALLERIES':
       return {galleries: action.payload}
