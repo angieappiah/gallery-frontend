@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import { deletePiece} from '../actions/deletePiece'
-import { pieceLiker} from '../actions/pieceLiker'
+import { updateLikes} from '../actions/updateLikes'
 
 
 class Pieces extends React.Component {
@@ -11,7 +11,7 @@ class Pieces extends React.Component {
     }
 
     handleClick = (piece) => {
-        this.props.pieceLiker(piece.id, piece.gallery_id)
+        this.props.updateLikes(piece.id, piece.gallery_id)
     }
     
     handleDelete = (piece) => {
@@ -25,13 +25,13 @@ class Pieces extends React.Component {
                  <h5>Click On The X button at anytime to delete Piece(s)</h5>
                   {this.props.pieces && this.props.pieces.map(piece =>
                 <ul class="one">NAME: {piece.name}--DESCRIPTION: {piece.description} -- {piece.likes}
-                <button className="like-button" onClick={() => this.handleClick(piece)}> Like </button> 
+                <button className="like-button" onClick={() => this.handleClick(piece)}>0 </button> 
                 <button onClick={() => this.handleDelete(piece)}>X</button></ul>)}
                 <br></br><br></br>
             </div>
         )
     }    
 }
- export default connect(null, { deletePiece,pieceLiker})(Pieces)
+ export default connect(null, { deletePiece,updateLikes})(Pieces)
 
 //  <Liker piece={piece} pieceLiker={this.handleClick}/>

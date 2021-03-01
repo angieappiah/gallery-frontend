@@ -1,5 +1,5 @@
 
-export const pieceLiker = (pieceId, galleryId) => {
+export const updateLikes = (pieceId, galleryId) => {
     return(dispatch) =>{
       return fetch(`http://localhost:3000/api/v1/galleries/${galleryId}/pieces/${pieceId}`,{
            method: 'PATCH'
