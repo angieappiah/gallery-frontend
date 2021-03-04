@@ -39,10 +39,5 @@ export default function galleryReducer(state =  {galleries: []}, action) {
 }
 
 
-    // const {liked} = state
-            // return {...state, liked: liked+1}
-          // case 'INCREASE_LIKES':
-            // const {likes} = state
-            // return ({...state, likes: likes+1})
         
 

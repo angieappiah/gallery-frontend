@@ -11,7 +11,7 @@ class Pieces extends React.Component {
     }
 
     handleClick = (piece) => {
-        this.props.updateLikes(piece.id, piece.gallery_id)
+        this.props.updateLikes(piece.id, piece.gallery_id) 
     }
     
     handleDelete = (piece) => {
@@ -19,19 +19,18 @@ class Pieces extends React.Component {
     }
 
     render(){
+        const sortedPieces = this.props.pieces &&  this.props.pieces.sort(function (a, b) {
+            return b.likes - a.likes  })
         return(
             <div class="header">
-                 <h2>These Are the Pieces in this style</h2>
-                 <h5>Click On The X button at anytime to delete Piece(s)</h5>
-                  {this.props.pieces && this.props.pieces.map(piece =>
-                <ul class="one">NAME: {piece.name}--DESCRIPTION: {piece.description} -- {piece.likes}
-                <button className="like-button" onClick={() => this.handleClick(piece)}>0 </button> 
-                <button onClick={() => this.handleDelete(piece)}>X</button></ul>)}
-                <br></br><br></br>
+                 <h1>These Are The Pieces In This Style</h1>
+                  {this.props.pieces && sortedPieces.map(piece =>
+                <ul class="one">NAME: {piece.name} <br/> DESCRIPTION: {piece.description} <br/>LIKES {piece.likes}
+                <button className="like-button" onClick={() => this.handleClick(piece)}> LIKE ✅</button> 
+                <button onClick={() => this.handleDelete(piece)}>DELETE ❌ </button></ul>)}
+                <br/>
             </div>
         )
     }    
 }
  export default connect(null, { deletePiece,updateLikes})(Pieces)
-
-//  <Liker piece={piece} pieceLiker={this.handleClick}/>

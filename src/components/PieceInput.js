@@ -35,6 +35,8 @@ class PieceInput extends React.Component {
                     <input type='text' name='name' value={this.state.name} onChange={this.handleChange} placeholder='name'/><br/>
                     <label>Description: </label><br></br>
                     <textarea name='description' value={this.state.description} onChange={this.handleChange} placeholder='description'/><br/>
+                    <label>Likes: </label><br></br>
+                    <input type='integer' name='likes' value={this.state.likes} onChange={this.handleChange} placeholder='likes'/><br/>
                     <input type="submit" />
                     <br></br><br></br><br></br> 
                 </form>
